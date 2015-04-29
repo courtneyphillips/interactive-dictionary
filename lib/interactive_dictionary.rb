@@ -1,16 +1,13 @@
 class Definition
-  define_method(:initialize) do
-    @@dictionary = {}
-  end
+  @@dictionary = {}
 
-  define_method(:save) do |term, definition|
+  define_method(:initialize) do |term, definition|
     @term = term
     @definition = definition
-    @@dictionary.push(@term,@definition)
+  end
 
+  define_singleton_method(:all) do
+    @@dictionary = {@term => @definition}
+  end
 
-end
-
-class Word
-  define_method(:initialize) do
 end
