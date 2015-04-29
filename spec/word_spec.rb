@@ -17,17 +17,15 @@ describe(Word) do
     end
   end
 
+  describe("#save") do
+    it("adds a new term to the dictionary") do
+      test_term = Word.new("spider")
+      test_term.save()
+      expect(Word.all()).to(eq([test_term]))
+    end
+  end
 
 
-  #
-  # describe("#save") do
-  #   it("saves a new term to the dictionary") do
-  #     test_term = Word.new("spider")
-  #     test_term.save()
-  #
-  #
-  #     expect(Word.new)
-  #
 
 
 
