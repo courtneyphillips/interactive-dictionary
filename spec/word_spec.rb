@@ -11,4 +11,24 @@ describe(Word) do
     end
   end
 
+  describe(".all") do
+    it("begins empty") do
+      expect(Word.all()).to(eq([]))
+    end
+  end
+
+
+
+  #
+  # describe("#save") do
+  #   it("saves a new term to the dictionary") do
+  #     test_term = Word.new("spider")
+  #     test_term.save()
+  #
+  #
+  #     expect(Word.new)
+  #
+
+
+
 end
