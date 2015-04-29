@@ -25,7 +25,14 @@ describe(Word) do
     end
   end
 
-
+  describe(".clear") do
+    it("empties the dictionary of all saved terms and definitions") do
+      test_term = Word.new("spider").save()
+      Word.clear()
+      expect(Word.all()).to(eq([]))
+    end
+  end
+  
 
 
 
