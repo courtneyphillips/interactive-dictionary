@@ -1,5 +1,6 @@
 class Definition
   @@definitions = []
+  @@dictionary = {}
 
   define_method(:initialize) do |definition|
     @definition = definition
@@ -17,12 +18,16 @@ class Definition
     @@definitions.push(@definition)
   end
 
+  define_method(:link) do
+  @@dictionary = {@words => @@definitions}
+end
+
 end
 
 
 
 class Word
-  @@words = []
+  @words = []
 
   define_method(:initialize) do |term|
     @term = term
