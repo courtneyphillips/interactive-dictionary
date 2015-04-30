@@ -9,6 +9,13 @@ describe(Word) do
     end
   end
 
+  # describe ('.save') do
+  #   it ('saves the term to the dictionary') do
+  #     new_term = Word.new('fish').save
+  #     expect(Term.all).to eql new_term
+  #   end
+  # end
+
 end
 
 
@@ -22,5 +29,10 @@ describe(Definition) do
     end
   end
 
+  describe('.clear') do
+    it("empties the array of definitions") do
+      expect(Definition.clear()).to(eq([]))
+    end
+  end
 
 end
