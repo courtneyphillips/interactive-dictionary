@@ -15,13 +15,13 @@ describe(Word) do
     end
   end
 
-  # describe ('.save') do
-  #   it ('saves the term to the dictionary') do
-  #     new_term = Word.new('fish').save
-  #     expect(Term.all).to eql new_term
-  #   end
-  # end
-
+  describe('#save') do
+    it("is saved for later use") do
+      test_definition = Word.new("spiders")
+      test_definition.save()
+      expect(Word.all()).to(eq(["spiders"]))
+    end
+  end
 end
 
 

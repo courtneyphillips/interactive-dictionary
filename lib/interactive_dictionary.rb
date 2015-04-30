@@ -36,4 +36,8 @@ class Word
     @@words = []
   end
 
+  define_method(:save) do
+    @@words.push(@term)
+  end
+
 end
