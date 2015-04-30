@@ -13,21 +13,19 @@ class Definition
     @@definitions
   end
 
-
-
 end
 
 
 
 class Word
-  @@dictionary = []
+  @@words = []
 
   define_method(:initialize) do |term|
     @term = term
   end
 
   define_singleton_method(:all) do
-    @@dictionary
+    @@words
   end
 
 end
