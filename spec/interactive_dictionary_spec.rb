@@ -9,6 +9,12 @@ describe(Word) do
     end
   end
 
+  describe('.clear') do
+    it("empties the array of words") do
+      expect(Word.clear()).to(eq([]))
+    end
+  end
+
   # describe ('.save') do
   #   it ('saves the term to the dictionary') do
   #     new_term = Word.new('fish').save
@@ -32,6 +38,14 @@ describe(Definition) do
   describe('.clear') do
     it("empties the array of definitions") do
       expect(Definition.clear()).to(eq([]))
+    end
+  end
+
+  describe('#save') do
+    it("is saved for later use") do
+      test_definition = Definition.new("the spookiest")
+      test_definition.save()
+      expect(Definition.all()).to(eq(["the spookiest"]))
     end
   end
 
