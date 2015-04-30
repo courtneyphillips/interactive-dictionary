@@ -9,23 +9,24 @@ class Definition
     @definitions = []
   end
 
-  # define_method(:define_word) do |definition|
-  #   @@entry = []
-  #   @definition = definition
-  #   new_word = Word.new(@term)
-  #   @@entry.push(new_word, definition
-  # end
-
 end
 
 
+
 class Word
+  @@dictionary = []
 
   define_method(:initialize) do |term|
     @term = term
   end
 
   define_singleton_method(:all) do
-    @@dictionary = {@term => [@definition]}
+    @@dictionary
   end
+
+  define_method(:save) do
+  @@dictionary.push(@term)
+  @@dictionary.push(@definition)
+  end
+
 end
