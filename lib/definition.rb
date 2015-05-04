@@ -1,6 +1,7 @@
 class Definition
+  attr_reader(:definitions)
+
   @@definitions = []
-  @@dictionary = {}
 
   define_method(:initialize) do |definition|
     @definition = definition
@@ -15,34 +16,11 @@ class Definition
   end
 
   define_method(:save) do
-    @@definitions.push(@definition)
+    @@definitions.push(self)
   end
 
   define_method(:link) do
   @@dictionary = {@words => @@definitions}
 end
-
-end
-
-
-
-class Word
-  @words = []
-
-  define_method(:initialize) do |term|
-    @term = term
-  end
-
-  define_singleton_method(:all) do
-    @@words
-  end
-
-  define_singleton_method(:clear) do
-    @@words = []
-  end
-
-  define_method(:save) do
-    @@words.push(@term)
-  end
 
 end
