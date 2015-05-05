@@ -20,7 +20,7 @@ class Definition
   end
 
   define_method(:link) do
-  @@dictionary = {@words => @@definitions}
-end
+    @@dictionary = {@words => @@definitions}
+  end
 
 end
