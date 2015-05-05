@@ -9,13 +9,13 @@ describe(Word) do
 
   describe('.all') do
     it("Is empty at first.") do
-      expect(Word.all()).to(eq([]))
+      expect(Word.all()).to(eq({}))
     end
   end
 
   describe('.clear') do
     it("empties the array of words") do
-      expect(Word.clear()).to(eq([]))
+      expect(Word.clear()).to(eq({}))
     end
   end
 
