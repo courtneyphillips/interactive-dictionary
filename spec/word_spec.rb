@@ -21,9 +21,10 @@ describe(Word) do
 
   describe('#save') do
     it("is saved for later use") do
-      test_definition = Word.new("spiders")
-      test_definition.save()
-      expect(Word.all()).to(eq(["spiders"]))
+      test_word = Word.new("spiders")
+      test_definition = Definition.new("spookiest")
+      test_word.save(tes_definition)
+      expect(Word.all()).to(eq({"spiders" => "spookiest"}))
     end
   end
 end

@@ -23,7 +23,7 @@ describe(Definition) do
     it("Saves the definition to the dictionary.") do
       test_definition = Definition.new("the spookiest")
       test_definition.save()
-      expect(Definition.all()).to(eq(["the spookiest"]))
+      expect(Definition.all()).to(eq([test_definition]))
     end
   end
 
