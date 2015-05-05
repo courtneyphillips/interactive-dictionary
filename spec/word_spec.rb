@@ -1,5 +1,6 @@
 require('rspec')
-require('interactive_dictionary')
+require('word')
+require('definition')
 
 describe(Word) do
   before() do
@@ -7,7 +8,7 @@ describe(Word) do
   end
 
   describe('.all') do
-    it("is nil at first.") do
+    it("Is empty at first.") do
       expect(Word.all()).to(eq([]))
     end
   end
