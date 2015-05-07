@@ -19,21 +19,24 @@ end
 
 post('/definitions/:id') do
   @word = Word.find(params.fetch("id").to_i())
-  definition = params.fetch("new_definition")
-  word = params.fetch("word_id")
-  new_word = Word.new({:term => word})
-  new_word.define(definition)
-  @definitions = new_word.definitions()
+  definition = params.fetch("definition")
+  @word.define(definition)
+
+  # word = params.fetch("word_id")
+  # new_word = Word.new({:term => word})
+  # new_word.define(definition)
+  @definitions = @word.definitions()
   erb(:definitions)
 end
 
 get('/definitions/:id') do
-  word = params.fetch("word_id")
+  #word = params.fetch("word_id")
   @word = Word.find(params.fetch("id").to_i())
-  new_word = Word.new({:term => word})
-  new_definition = params.fetch("definition")
-  new_word.define(new_definition)
-  @definitions = new_word.definitions()
+  @definitions = @word.definitions()
+  #new_word = Word.new({:term => word})
+  #new_definition = params.fetch("definition")
+  #new_word.define(new_definition)
+  #@definitions = new_word.definitions()
   erb(:definitions)
 
 end
