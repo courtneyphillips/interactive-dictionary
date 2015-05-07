@@ -19,14 +19,6 @@ describe(Definition) do
     end
   end
 
-  # describe('#save') do
-  #   it("Saves the definition to the dictionary.") do
-  #     test_definition = Definition.new(:definition => "the spookiest")
-  #     test_definition.save()
-  #     expect(Definition.all()).to(eq([test_definition]))
-  #   end
-  # end
-
 
 
 end

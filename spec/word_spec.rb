@@ -34,8 +34,8 @@ describe('#id') do
   end
 end
 
-describe('#definitions')do
-  it("returns definitions of a word") do
+describe('#definitions') do
+  it("returns definitions of a word. is empty at first") do
     test_word = Word.new({:term => "Spiders"})
     test_definition = Definition.new({:definition => "the spookiest"})
     test_word.define(test_definition)
@@ -44,12 +44,14 @@ describe('#definitions')do
   end
 end
 
-
-# describe('#define') do
-#   it("adds a definition to a word") do
-#     test_word = Word.new({:term => "Spiders"})
-#     test_word.save()
-#     expect(test_word.define("the spookiest")).to(eq())
+describe('#define') do
+  it("adds a definition to a word") do
+    test_word = Word.new({:term => "Spiders"})
+    test_definition = Definition.new({:definition => "the spookiest"})
+    test_word.define(test_definition)
+    expect(test_word.definitions()).to(eq([test_definition]))
+  end
+end
 
 
   # describe('#save') do
