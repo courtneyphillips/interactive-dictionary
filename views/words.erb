@@ -2,8 +2,8 @@
 
 <div class="container">
 <ul>
-  <% @@all_words.each() do |word| %>
-  <li><a href="/words"<%= word.id() %>"<%= word.term() %></a> </li>
+  <% @words.each() do |word| %>
+  <li><%= word.id() %>"<%= word.term() %></a> </li>
     <% end %>
 </ul>
 </div>

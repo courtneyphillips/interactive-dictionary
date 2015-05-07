@@ -7,6 +7,10 @@ class Definition
     @meaning = attributes.fetch(:meaning)
   end
 
+  define_method(:save) do |definition|
+    @@all_definitions.push(definition)
+  end
+
   define_singleton_method(:clear) do
     @@all_definitions = []
   end

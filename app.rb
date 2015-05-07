@@ -5,20 +5,39 @@ require('./lib/definition.rb')
 require('./lib/word.rb')
 
 get('/') do
+  @words = Word.all()
   erb(:index)
 end
 
 post('/words') do
-  term = params.fetch("term")
-  new_word = Word.new({:term => term})
+  @words = Word.all
+  word = params.fetch("word")
+  new_word = Word.new({:term => word})
   new_word.save
-  erb(:words)
+  redirect to('/')
 end
 
-get('/words/:id') do
-  @words = Word.all()
-  erb(:words)
+post('/word/:id') do
+  #word = Word.find(params.fetch("id").to_i())
+
+
+  erb(:word)
 end
+
+get('/word/:id') do
+  @word = Word.find(params.fetch("id").to_i())
+  definition = params.fetch("new_definition")
+  new_definition = Definition.new({:meaning => definition})
+  new_definition.save()
+  @definitions = @word.definitions(params.fetch('new_definition'))
+  erb(:word)
+end
+
+# get('/words/:id/definitions') do
+#   @word = Word.find(params.fetch('id').to_i)
+#   word.definitions(params.fetch('definition'))
+#   redirect to ("words/#{word.id}")
+# end
 
 
 # post("/entry") do
