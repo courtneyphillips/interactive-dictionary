@@ -20,6 +20,9 @@ class Word
     @@dictionary.push(self)
   end
 
+
+
+
   # #for adding another definition to already-stored words
   # define_method(:add_definition) do |new_definition|
   #   @definitions.save(new_definition)

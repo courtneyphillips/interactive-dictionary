@@ -26,6 +26,14 @@ describe('#save') do
   end
 end
 
+describe('#id') do
+  it("returns the id number of a given word") do
+    test_word = Word.new({:term => "Spiders"})
+    test_word.save()
+    expect(test_word.id).to(eq(1))
+  end
+end
+
 
 
   # describe('#save') do
