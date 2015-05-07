@@ -1,7 +1,7 @@
 
 
 <h1>Your word:</h1>
-<%= @word %>
+<%= @word.term() %>
 
 <ul>
 <% @definitions.each() do |definition| %>
@@ -14,6 +14,15 @@
 
 
 <form action="/word/:id" method="post">
+  <label for="new_definition">Define Word:</label>
+  <input id="new_definition" name="new_definition" type="text">
+  <!-- <label for="definition">Definition</label>
+  <input id="definition" name="definition" type="text"> -->
+  <button type="submit">Add Definition</button>
+</form>
+
+<form action="/definitions/:id" method="post">
+  <input id="word_id" name="word_id" type="hidden" value= "<%=@word.id %>">
   <label for="new_definition">Define Word:</label>
   <input id="new_definition" name="new_definition" type="text">
   <!-- <label for="definition">Definition</label>

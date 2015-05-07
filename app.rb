@@ -17,8 +17,8 @@ post('/words') do
   redirect to('/')
 end
 
-post('/word/definitions/:id') do
-  # @word = Word.find(params.fetch("id").to_i())
+post('/definitions/:id') do
+  @word = Word.find(params.fetch("id").to_i())
   definition = params.fetch("new_definition")
   word = params.fetch("word_id")
   new_word = Word.new({:term => word})
@@ -27,8 +27,9 @@ post('/word/definitions/:id') do
   erb(:definitions)
 end
 
-get('/word/definitions/:id') do
+get('/definitions/:id') do
   word = params.fetch("word_id")
+  @word = Word.find(params.fetch("id").to_i())
   new_word = Word.new({:term => word})
   new_definition = params.fetch("definition")
   new_word.define(new_definition)
