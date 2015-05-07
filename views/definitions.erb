@@ -1,6 +1,4 @@
-
 <div class="jumbotron"><h1>The Interactive Dictionary</h1></div>
-
 
 <div class="container">
 
@@ -18,22 +16,5 @@
 <form action="/definitions/<%= @word.id() %>" method="post">
   <label for="definition">Definition:</label>
   <input id="definition" name="definition" type="definition">
-  <!-- <label for="definition">Definition</label>
-  <input id="definition" name="definition" type="text"> -->
   <button type="submit">Add Definition</button>
 </form>
-
-
-<!--
-
-<h1>Your word:</h1>
-<%= @word.term() %>
-
-<ul>
-<% @definitions.each() do |definition| %>
-<li><%= definition %></li>
-<% end %>
-</ul>
-
-
-<br>
