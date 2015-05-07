@@ -22,18 +22,17 @@ class Word
   end
 
   define_method(:define) do |meaning|
-    definition = Definition.new({:meaning => meaning})
+    Definition.new({:meaning => meaning})
     @definitions.push(meaning)
   end
 
-  # #for adding another definition to already-stored words
-  # define_method(:add_definition) do |new_definition|
-  #   @definitions.push(new_definition)
-  #   # @@dictionary[self.id] = [self.term, self.definitions]
-  # end
-
-  # define_method(:save) do
-  #   @@dictionary[self.id] = [self.term, self.definitions]
-
-# end
+  define_singleton_method(:find) do |id|
+    found_word = nil
+    @@all_words.each() do |word|
+      if word.id == id
+        found_word = word
+      end
+    end
+      found_word
+end
 end

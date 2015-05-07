@@ -18,7 +18,4 @@ describe(Definition) do
       expect(Definition.clear()).to(eq([]))
     end
   end
-
-
-
 end
