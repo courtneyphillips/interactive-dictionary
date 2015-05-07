@@ -17,7 +17,7 @@ Interactive Dictionary aims to reduce the burden, frustration and literacy requi
 
 ## Code Example
 
-The magic behind the Interactive Dictionary is a set of custom `Word` and `Definition` classes with methods such as `Word#save`, `Word.clear`, `Word#id`, `Definition#save`, and `Definition.all` method that act in sync to store, recall and correlate words and their relevant definitions. See example below:
+The magic behind the Interactive Dictionary is a set of custom `Word` and `Definition` classes with methods such as `Word#save`, `Word.clear`, `Word#define`, `Word.all`, `Definition#save`,`Definition.clear` and `Definition.all` method that act in sync to store, recall and correlate words and their relevant definitions. See example below:
 
   ``test_word = Word.new({:term => "Spiders"})
     test_word.define("The spookiest!")
