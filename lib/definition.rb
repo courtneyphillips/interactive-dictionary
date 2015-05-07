@@ -1,9 +1,8 @@
 class Definition
-  attr_reader(:definitions)
 
   @@definitions = []
 
-  define_method(:initialize) do |definition|
+  define_method(:initialize) do 
     @definition = definition
   end
 
@@ -15,12 +14,13 @@ class Definition
     @@definitions
   end
 
-  define_method(:save) do
-    @@definitions.push(self)
-  end
-
-  define_method(:link) do
-    @@dictionary = {@words => @@definitions}
-  end
-
+#   define_method(:save) do
+#     @@definitions.push(self)
+#
+#
+#   # define_method(:link) do
+#   #   @@dictionary = {@words => @@definitions}
+#   # end
+#
+# end
 end
