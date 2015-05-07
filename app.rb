@@ -9,13 +9,6 @@ get('/') do
   erb(:index)
 end
 
-# post('/word') do
-#   @words = Word.all
-#   @word = params.fetch('word')
-#   redirect to('/')
-# end
-
-
 post('/words') do
   @words = Word.all
   word = params.fetch("word")
@@ -24,46 +17,27 @@ post('/words') do
   redirect to('/')
 end
 
-post('/word/:id') do
-  @id = params.fetch("id").to_i
-  @word = Word.find(params.fetch("id").to_i())
-  @definitions = @word.definitions()
+post('/word/definitions/:id') do
+  # @word = Word.find(params.fetch("id").to_i())
+  definition = params.fetch("new_definition")
+  word = params.fetch("word_id")
+  new_word = Word.new({:term => word})
+  new_word.define(definition)
+  @definitions = new_word.definitions()
   erb(:definitions)
+end
+
+get('/word/definitions/:id') do
+  word = params.fetch("word_id")
+  new_word = Word.new({:term => word})
+  new_definition = params.fetch("definition")
+  new_word.define(new_definition)
+  @definitions = new_word.definitions()
+  erb(:definitions)
+
 end
 
 get('/word/:id') do
   @word = Word.find(params.fetch("id").to_i())
   erb(:word)
 end
-
-post('/word/:id') do
-  @word = Word.find(params.fetch("id").to_i())
-end
-
-
-# post('/definitions') do
-#   new_definition = params.fetch("new_definition")
-#   @word = Word.find(params.fetch("id").to_i)
-#   # definition = Definition.new({:meaning => new_definition})
-#   @word.define(new_definition)
-#   @definitions = @word.definitions()
-#   redirect to ('/word/:id')
-# end
-#
-# get('/definitions') do
-#   @word = Word.find(params.fetch("id").to_i())
-#   @definitions = @word.definitions()
-#   redirect to ('/word/:id')
-#   end
-#
-#
-#
-#
-#
-#
-#
-# # get('/words/:id/definitions') do
-# #   @word = Word.find(params.fetch('id').to_i)
-# #   word.definitions(params.fetch('definition'))
-# #   redirect to ("words/#{word.id}")
-# # end

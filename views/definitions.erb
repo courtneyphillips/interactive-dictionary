@@ -5,14 +5,15 @@
 
 <ul>
 <% @definitions.each() do |definition| %>
-<li><%= @definition %></li>
+<li><%= definition %></li>
+<% end %>
 </ul>
 
 
 <br>
 
 
-<form action="/word/definitions" method="post">
+<form action="/word/:id" method="post">
   <label for="new_definition">Define Word:</label>
   <input id="new_definition" name="new_definition" type="text">
   <!-- <label for="definition">Definition</label>

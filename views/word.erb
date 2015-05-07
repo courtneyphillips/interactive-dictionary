@@ -7,9 +7,10 @@
 
 
 
-#### word/:id/definitions
+
 <br>
-<form action="/word/<%= @id %>/definitions" method="post">
+<form action="/word/definitions/:id" method="post">
+  <input id="word_id" name="word_id" type="hidden" value= '<%= @word.term()%>'>
   <label for="new_definition">Define Word:</label>
   <input id="new_definition" name="new_definition" type="text">
   <!-- <label for="definition">Definition</label>
