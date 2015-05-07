@@ -1,17 +1,18 @@
 class Definition
+  attr_reader(:definition)
 
-  @@definitions = []
+  @@all_definitions = []
 
-  define_method(:initialize) do 
-    @definition = definition
+  define_method(:initialize) do |attributes|
+    @definition = attributes.fetch(:definition)
   end
 
   define_singleton_method(:clear) do
-    @@definitions = []
+    @@all_definitions = []
   end
 
   define_singleton_method(:all) do
-    @@definitions
+    @@all_definitions
   end
 
 #   define_method(:save) do
