@@ -61,8 +61,8 @@ describe(Word) do
       test_word = Word.new({:term => "Spiders"})
       test_word.save()
       test_word2 = Word.new({:term => "Scorpions"})
-      test_word.save()
-      expect(Word.find(1)).to(eq(test_word))
+      test_word2.save()
+      expect(Word.find(2)).to(eq(test_word2))
     end
   end
 end

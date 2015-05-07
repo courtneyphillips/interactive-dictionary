@@ -1,3 +1,5 @@
+require('pry')
+
 class Word
   attr_reader(:id, :term, :definitions)
 
@@ -33,6 +35,7 @@ class Word
         found_word = word
       end
     end
+    
       found_word
     end
 end

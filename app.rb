@@ -24,16 +24,22 @@ post('/words') do
   redirect to('/')
 end
 
-# post('/word/:id') do
-#   @word = Word.find(params.fetch("id").to_i())
-#   @definitions = @word.definitions()
-#   erb(:definitions)
+post('/word/:id') do
+  @id = params.fetch("id").to_i
+  @word = Word.find(params.fetch("id").to_i())
+  @definitions = @word.definitions()
+  erb(:definitions)
+end
 
 get('/word/:id') do
   @word = Word.find(params.fetch("id").to_i())
-  @definitions = @word.definitions()
   erb(:word)
 end
+
+post('/word/:id') do
+  @word = Word.find(params.fetch("id").to_i())
+end
+
 
 # post('/definitions') do
 #   new_definition = params.fetch("new_definition")

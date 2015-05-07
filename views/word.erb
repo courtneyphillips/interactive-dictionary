@@ -1,18 +1,15 @@
 
 
-<h1>Your word:</h1>
+<div class="container"><h1>Your word:</h1><br>
 <%= @word.term() %>
-
-<ul>
-<% @definitions.each() do |definition| %>
-<li><%= @definition %></li>
-</ul>
-
-
+</div>
 <br>
 
 
-<form action="/word/definitions" method="post">
+
+#### word/:id/definitions
+<br>
+<form action="/word/<%= @id %>/definitions" method="post">
   <label for="new_definition">Define Word:</label>
   <input id="new_definition" name="new_definition" type="text">
   <!-- <label for="definition">Definition</label>
