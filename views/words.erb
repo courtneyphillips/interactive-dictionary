@@ -1,0 +1,9 @@
+<h1>Words in Dictionary:</h1>
+
+<div class="container">
+<ul>
+  <% @@all_words.each() do |word| %>
+  <li><a href="/words"<%= word.id() %>"<%= word.term() %></a> </li>
+    <% end %>
+</ul>
+</div>

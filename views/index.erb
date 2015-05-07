@@ -1,16 +1,10 @@
 
+<h1>The Interactive Dictionary</h1>
 
-<ul>
-  <% definitions.each() do |definition| %>
-  <li><%= term.definition() %>
-    <% end %>
-</ul>
-
-
-<form action="/entries" method="post">
-  <label for="term">Term</label>
+<form action="/words" method="post">
+  <label for="term">Term:</label>
   <input id="term" name="term" type="text">
-  <label for="definition">Definition</label>
-  <input id="definition" name="definition" type="text">
-  <button type="submit">Add Definition</button>
+  <!-- <label for="definition">Definition</label>
+  <input id="definition" name="definition" type="text"> -->
+  <button type="submit">Add Word</button>
 </form>

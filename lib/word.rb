@@ -1,5 +1,5 @@
 class Word
-  attr_reader(:id, :word, :definitions)
+  attr_reader(:id, :term, :definitions)
 
   @@all_words = []
 
@@ -34,5 +34,5 @@ class Word
       end
     end
       found_word
-end
+    end
 end

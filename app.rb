@@ -5,9 +5,21 @@ require('./lib/definition.rb')
 require('./lib/word.rb')
 
 get('/') do
-#  entries = @@dictionary.all()
   erb(:index)
 end
+
+post('/words') do
+  term = params.fetch("term")
+  new_word = Word.new({:term => term})
+  new_word.save
+  erb(:words)
+end
+
+get('/words/:id') do
+  @words = Word.all()
+  erb(:words)
+end
+
 
 # post("/entry") do
 #   term = params.fetch("term")
