@@ -1,10 +1,10 @@
-#Word Frequency
+#Interactive Dictionary
 
 ---
 
 #### Links
 
-  - Heroku: https://whispering-springs-8808.herokuapp.com/
+  - Heroku:
   - GitHub: https://github.com/courtneyphillips/interactive-dictionary
 
 ## Synopsis
@@ -13,13 +13,18 @@ Interactive Dictionary is a simple Ruby application built by [Courtney Phillips]
 
 ## Motivation
 
-Interactive Dictionary aims to reduce the burden, frustration and literacy required to _manually_ remember what words mean. Especially all those _oh-so-clever_ ones you keep making up.  
+Interactive Dictionary aims to reduce the burden, frustration and literacy required to _manually_ remember what words mean. Especially those _oh-so-clever_ ones you keep inventing yourself.
 
 ## Code Example
 
-The magic behind the Interactive Dictionary is a set of custom classes and methods `String#word_frequency` method that acts upon a phrase, including the word you wish to count as the argument.
+The magic behind the Interactive Dictionary is a set of custom `Word` and `Definition` classes with methods such as `Word#save`, `Word.clear`, `Word#id`, `Definition#save`, and `Definition.all` method that act in sync to store, recall and correlate words and their relevant definitions. See example below:
 
-  ``"Wow, I'm so, so glad I don't have to read this sentence myself".word_frequency("so")``
+  ``test_word = Word.new({:term => "Spiders"})
+    test_word.define("The spookiest!")
+    test_word.define("really yucky")
+    test_word.definitions
+
+    ==> ["the spookiest", "really yucky"]))``
 
 ## Contribute
 
@@ -41,7 +46,7 @@ To install, run `gem install bundle` in the command line.
 
 ## Tests
 
-Both method and integration tests for Interactive Dictionary utilize the RSpec. Simply run `gem install rspec`, if it's not already installed, and then the command `rspec`, while located in the project's file.
+Both method and integration tests for Interactive Dictionary utilize the RSpec. Simply run `gem install rspec`, if it's not already installed, simply issue the command `rspec`, while located in the project's file.
 
 ## Contact
 
