@@ -37,9 +37,7 @@ end
 describe('#definitions') do
   it("returns definitions of a word. is empty at first") do
     test_word = Word.new({:term => "Spiders"})
-    test_definition = Definition.new({:definition => "the spookiest"})
-    test_word.define(test_definition)
-    expect(test_word.definitions()).to(eq([test_definition]))
+    expect(test_word.definitions()).to(eq([]))
 
   end
 end
