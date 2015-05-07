@@ -21,9 +21,9 @@ class Word
     @@all_words.push(self)
   end
 
-  define_method(:define) do |definition|
-    new_definition = Definition.new({:definition => definition})
-    @definitions.push(definition)
+  define_method(:define) do |meaning|
+    definition = Definition.new({:meaning => meaning})
+    @definitions.push(meaning)
   end
 
   # #for adding another definition to already-stored words

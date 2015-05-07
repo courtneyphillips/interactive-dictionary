@@ -39,22 +39,26 @@ describe('#definitions') do
     test_word = Word.new({:term => "Spiders"})
     expect(test_word.definitions()).to(eq([]))
   end
+
   it("will return all definitions of a word") do
     test_word = Word.new({:term => "Spiders"})
-    test_definition = Definition.new({:definition => "the spookiest"})
-    test_word.define(test_definition)
-    test_definition2 = Definition.new({:definition => "really yucky"})
-    test_word.define(test_definition2)
-    expect(test_word.definitions()).to(eq([test_definition, test_definition2]))
+    test_word.define("the spookiest")
+    test_word.define("really yucky")
+
+
+    # test_definition = Definition.new({:meaning => "the spookiest"})
+    # test_word.define(test_definition)
+    # test_definition2 = Definition.new({:meaning => "really yucky"})
+    # test_word.define(test_definition2)
+    expect(test_word.definitions()).to(eq(["the spookiest", "really yucky"]))
 end
 end
 
 describe('#define') do
   it("adds a definition to a word") do
     test_word = Word.new({:term => "Spiders"})
-    test_definition = Definition.new({:definition => "the spookiest"})
-    test_word.define(test_definition)
-    expect(test_word.definitions()).to(eq([test_definition]))
+    test_word.define("the spookiest")
+    expect(test_word.definitions()).to(eq(["the spookiest"]))
   end
 end
 
