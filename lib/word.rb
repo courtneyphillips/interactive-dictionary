@@ -1,23 +1,24 @@
 class Word
-  attr_reader(:id, :term)
+  attr_reader(:id, :word, :definitions)
 
-  @@dictionary = []
+  @@all_words = []
 
   define_method(:initialize) do |attributes|
     @term = attributes.fetch(:term)
-    @id = @@dictionary.length().+(1)
+    @definitions = []
+    @id = @@all_words.length().+(1)
   end
 
   define_singleton_method(:all) do
-    @@dictionary
+    @@all_words
   end
 
   define_singleton_method(:clear) do
-    @@dictionary = []
+    @@all_words = []
   end
 
   define_method(:save) do
-    @@dictionary.push(self)
+    @@all_words.push(self)
   end
 
 
