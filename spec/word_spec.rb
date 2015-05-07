@@ -35,11 +35,18 @@ describe('#id') do
 end
 
 describe('#definitions') do
-  it("returns definitions of a word. is empty at first") do
+  it("is empty at first") do
     test_word = Word.new({:term => "Spiders"})
     expect(test_word.definitions()).to(eq([]))
-
   end
+  it("will return all definitions of a word") do
+    test_word = Word.new({:term => "Spiders"})
+    test_definition = Definition.new({:definition => "the spookiest"})
+    test_word.define(test_definition)
+    test_definition2 = Definition.new({:definition => "really yucky"})
+    test_word.define(test_definition2)
+    expect(test_word.definitions()).to(eq([test_definition, test_definition2]))
+end
 end
 
 describe('#define') do
@@ -51,13 +58,4 @@ describe('#define') do
   end
 end
 
-
-  # describe('#save') do
-  #   it("is saved for later use") do
-  #     test_word = Word.new("spiders")
-  #     test_definition = Definition.new("spookiest")
-  #     test_word.save(test_definition)
-  #     expect(Word.all()).to(eq({"spiders" => "spookiest"}))
-  #   end
-  # end
 end

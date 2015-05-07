@@ -28,8 +28,8 @@ class Word
 
   # #for adding another definition to already-stored words
   # define_method(:add_definition) do |new_definition|
-  #   @definitions.save(new_definition)
-  #   @@dictionary[self.id] = [self.term, self.definitions]
+  #   @definitions.push(new_definition)
+  #   # @@dictionary[self.id] = [self.term, self.definitions]
   # end
 
   # define_method(:save) do

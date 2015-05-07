@@ -15,13 +15,4 @@ class Definition
     @@all_definitions
   end
 
-#   define_method(:save) do
-#     @@definitions.push(self)
-#
-#
-#   # define_method(:link) do
-#   #   @@dictionary = {@words => @@definitions}
-#   # end
-#
-# end
 end
