@@ -1,11 +1,15 @@
 
 <div class="jumbotron"><h1>The Interactive Dictionary</h1></div>
 
+
 <div class="container">
+
+  <h1>Words in Dictionary:</h1>
+
 <ul>
   <% @words.each() do |word| %>
-  <li><a href="word/<%= word.id() %>"><%= word.term() %></a> </li>
-    <% end %>
+  <li><a href="/word/<%= word.id() %>"><%= word.term() %></a> </li>
+      <% end %>
 </ul>
 </div>
 
@@ -16,5 +20,3 @@
   <input id="definition" name="definition" type="text"> -->
   <button type="submit">Add Word</button>
 </form>
-
-<h1>Words in Dictionary:</h1>

@@ -12,3 +12,12 @@ describe('Add a word path', {:type => :feature}) do
     expect(page).to have_content("Spiders")
   end
 end
+
+describe('Add a definition path', {:type => :feature}) do
+  it('will present a list of definitions for a given word') do
+    visit('/word/:id')
+    fill_in('new_definition', :with => "Spooky")
+    click_button("Add Definition")
+    expect(page).to have_content("Spooky")
+  end
+end
