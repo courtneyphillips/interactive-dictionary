@@ -1,20 +1,28 @@
-
-<div class="jumbotron"><h1>The Interactive Dictionary</h1></div>
-
-
-<div class="container">
-
-  <h1>Words in Dictionary:</h1>
-
-<ul>
-  <% @words.each() do |word| %>
-  <li><a href="/word/<%= word.id() %>"><%= word.term() %></a> </li>
-      <% end %>
-</ul>
+<div class="jumbotron">
+  <div class="container">
+    <h1>The Interactive Dictionary</h1></div>
+    <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+    <p>The dictionary <em>you</em> write! Store and define your own words.</p>
+  </div>
 </div>
 
-<form action="/words" method="post">
-  <label for="word">Term:</label>
-  <input id="word" name="word" type="text">
-  <button type="submit">Add Word</button>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+          <h2>Stored Words:</h2>
+          <ul>
+            <% @words.each() do |word| %>
+              <li><a href="/word/<%= word.id() %>"><%= word.term() %></a></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="col-xs-6">
+          <h2>Submit a New Word:</h2>
+          <form action="/words" method="post">
+            <label for="word">Term:</label>
+            <input id="word" name="word" type="text">
+            <button type="submit">Add Word</button>
+          </form>
+        </div>
+    </div>
+</div>
