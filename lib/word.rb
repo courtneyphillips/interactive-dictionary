@@ -34,5 +34,5 @@ class Word
       end
     end
       found_word
-    end
+  end
 end
