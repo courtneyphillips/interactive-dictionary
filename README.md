@@ -4,7 +4,8 @@
 
 #### Links
 
-  - Heroku:
+  - Heroku: https://pacific-fjord-4327.herokuapp.com/
+  -Please note that CSS styles did _not_ upload correctly to Heroku.
   - GitHub: https://github.com/courtneyphillips/interactive-dictionary
 
 ## Synopsis
