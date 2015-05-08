@@ -24,7 +24,6 @@ The magic behind the Interactive Dictionary is a set of custom `Word` and `Defin
     test_word.define("The spookiest!")
     test_word.define("really yucky")
     test_word.definitions
-
     ==> ["the spookiest", "really yucky"]))``
 
 ## Contribute
