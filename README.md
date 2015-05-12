@@ -10,7 +10,7 @@
 
 ## Synopsis
 
-Interactive Dictionary is a simple Ruby application built by [Courtney Phillips](https://github.com/courtneymaepdx) with the ability to collect user-input words, and correlate them with their user-given definitions.
+Interactive Dictionary is a simple Ruby application built by [Courtney Phillips](https://github.com/courtneymaepdx) with the ability to collect user-input words, and correlate them with their user-given definitions. Crafted as part of the Spring 2015 Ruby course curriculum at [Epicodus](https://www.epicodus.com/).
 
 ## Motivation
 
